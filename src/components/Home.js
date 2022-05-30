@@ -1,16 +1,49 @@
 import React from "react"
+import { Container, Row, Col, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import TestWhatever from "./Test"
+import AccordianMenu from "./AccordianMenu"
+import HomeFeature from "./HomeFeature"
+import ClassInfo from "./ClassInfo"
 
 export default function Home({}
     ){
     
     return (
-        <div>
-            <Link to={"/signup"}>Sign Up</Link>
-            <Link to={"/login"}>Sign In</Link>
-            <h2>   Hello home page </h2>
-            <TestWhatever/>
-        </div>
+        <Container fluid> 
+        <div className="homepage">
+             <Row>
+                <Col lg={true}>
+                    <div className="sunshine-lane-logo"> 
+                <h4>Sunshine</h4>
+                   <h4>Lane</h4>
+                   <p> community centre</p>
+            </div>
+                </Col>
+                <Col lg={8}>
+                
+                    <HomeFeature/>
+                    <div className="Newsletter-container">
+                    <h1 className="home-page-headings"> Welcome</h1>
+                    <p className="home-page-paragraph"> We are Sunshine Lane community centre. Mollit nostrud eu consequat nulla cupidatat dolore. Ea ad magna et mollit et cillum ex cillum irure elit minim aute. Do officia labore ea consequat magna reprehenderit enim dolore nostrud id.     Incididunt sint culpa mollit labore eu enim pariatur consequat consequat cupidatat occaecat minim anim ex. Labore incididunt anim eu amet.
+
+                    </p>
+                    </div>
+                    <div className="Newsletter-container">
+                    <h1 className="home-page-headings"> Newsletter </h1><p className="home-page-paragraph">
+                    Incididunt sint culpa mollit labore eu enim pariatur consequat consequat cupidatat occaecat minim anim ex. Labore incididunt anim eu amet minim in consequat occaecat. Magna commodo qui anim non velit non aliquip nostrud. Read out newsletter by clicking the button below.
+                        </p> 
+                        <p className="button-align"> <Button className="newsletter-button">Newsletter</Button></p>
+                     </div>   
+                </Col>
+                <Col lg={true}>
+                <h2 className="right-side-menu">Important Info</h2>
+                <AccordianMenu/>
+                </Col>
+            </Row>
+
+            </div>
+            </Container>
+            
+    
     )
 }

@@ -1,0 +1,79 @@
+.footer {
+    background-color: rgb(231, 231, 231);
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 1em;
+    margin-top: 2em;
+    margin-bottom: 0px;
+}
+
+.firestoreData {
+    color: rgb(28, 99, 186);
+}
+
+th {
+    color: blue;
+}
+
+.show-button {
+    visibility: visible;
+}
+
+.hide-button {
+    visibility: hidden;
+}
+
+.button-padding {
+    margin-right: 2 em;
+}
+
+.sunshine-lane-logo {
+    background-color:  rgb(252, 233, 137);
+    max-width: 7em;
+    max-height: 7em;
+    font-family: 'Zilla Slab Highlight';
+    color: rgba(7, 7, 4, 0.952);
+    border-radius: 7em;
+    margin-bottom: 1em;
+    
+}
+
+.right-side-menu {
+    font-family: 'Zilla Slab Highlight';
+    color: rgba(7, 7, 4, 0.952);
+   text-align: center;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+.home-page-headings {
+    /* font-family: 'Zilla Slab Highlight'; */
+    color: rgba(7, 7, 4, 0.952);
+   text-align: center;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+.home-page-paragraph {
+    text-align: justify;
+}
+
+
+
+.button-align {
+    text-align: center;
+} 
+
+.Newsletter-container {
+    border: 1px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.carousel-item {
+   
+    
+}
+.bsPrefix {
+}
+
