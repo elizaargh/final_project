@@ -11,7 +11,10 @@ import MyBookings from "./MyBookings";
 import CreateClass from "./UserBooking";
 import UserBooking from "./UserBooking";
 import ClassInfo from "./ClassInfo";
-import BookIntoClass from "./BookIntoClass"
+import BookIntoClass from "./ExploreClasses"
+import UpdateBooking from "./updateBooking";
+import CancelBooking from "./CancelBooking";
+import ClassBookingCards from "./ClassBookingCards";
 
 
 export default function UpdateProfile(){
@@ -60,12 +63,12 @@ export default function UpdateProfile(){
         <Nav.Link href="/myTimetable">My Timetable</Nav.Link>
        
         <div>  
-        
-           
+            <h3> Your Upcoming Classes:</h3>
+           <ClassBookingCards/>
             <BookIntoClass/>
            
             {/* <Timetable/> */}
-            <ClassInfo/>
+            {/* <ClassInfo/> */}
             {/* <UserIsIn/>
             <MyBookings/> */}
             <Button onClick={handleLogout} htmlFor="Log Out button"> Log out</Button>

@@ -1,6 +1,7 @@
 import Table from 'react-bootstrap/Table'
 import React from 'react';
 import { useAuth } from "./contexts/AuthContext"
+import CancelBooking from "./CancelBooking";
 
 const Timetable = () => {
   const {currentUser} = useAuth()
@@ -30,7 +31,9 @@ const Timetable = () => {
       <td>7 am</td>
   
         <td> Yoga</td>
-        <td> Funky Dancing</td>
+        <td> Funky Dancing
+          <CancelBooking/>
+        </td>
         <td> </td>
         <td> </td>
         <td> Meditation</td>

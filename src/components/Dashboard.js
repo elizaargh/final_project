@@ -3,6 +3,7 @@ import {Card, Button, Alert, Container} from 'react-bootstrap'
 import { useAuth } from "./contexts/AuthContext";
 import {Link, useHistory} from "react-router-dom";
 import UserClasses from "./UserClasses";
+import ClassInfo from "./ClassInfo";
 
 
 export default function Dashboard() {
@@ -22,6 +23,7 @@ export default function Dashboard() {
     }
     return (
         <>
+        <ClassInfo/>
         <Container fluid className="d-flex align-items-center justify-content-center"> 
         <div className='w-100' style={{maxWidth: "400px"}}>
         <Card>

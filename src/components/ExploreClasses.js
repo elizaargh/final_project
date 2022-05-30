@@ -1,5 +1,5 @@
 import { Button, Card, CardGroup, Modal, Row, Col, handleClose, handleShow } from "react-bootstrap";
-import { collection, doc, setDoc } from "firebase/firestore"; 
+import { collection, doc, addDoc, updateDoc, setDoc } from "firebase/firestore"; 
 import React, {Children, useEffect, useState, set} from "react";
 import { Container } from "react-bootstrap";
 import { db } from "../firebase";
@@ -8,6 +8,7 @@ import Img from "./yogaStock.jpg"
 import dance from "./funkyDance.jpg"
 import paintingStock from "./paintingStock.jpg"
 import { propTypes } from "react-bootstrap/esm/Image";
+// import localStorage from "local-storage";
 
 // Add a new document in collection "Ee"
 const BookIntoClass = () => {
@@ -24,11 +25,18 @@ const BookIntoClass = () => {
   const handleClick = () => {
     //TO DO:
     //save state "booked" even on refresh!
+    if (book == "book") {
     setBook("booked!")
     handleClose()
-    addYogaBooking()
+    addYogaBooking("booked!")
     setMessage("You are already booked in!")
     setSpan("hide-button")
+      } else {
+        handleClose()
+        setMessage("You are already booked in!")
+        setSpan("hide-button")
+      }
+
   }
 
   
@@ -58,20 +66,29 @@ const BookIntoClass = () => {
     }
 
     async function addFunkyDancingBooking() { 
-        await setDoc(doc(db, "Funky Dacing", userUid), {
-         
-          Funky_Dance: {email},
+        await addDoc(doc(db, "Funky Dacing", userUid), {
+          Funky_Dance: [{email}],
           booked: true
         });
     }
 
   //   useEffect(() => {
-  //     localStorage.setBook('book', JSON.stringify(book));
+  //     localStorage.setItem('book', JSON.stringify(book));
+  //     console.log(book, "= book")
   //   }, [book]);
+
+  //   useEffect(() => {
+  //     const book = JSON.parse(localStorage.getItem('book'));
+  //     if (book) {
+  //      setBook(book);
+  //      console.log(book, "= SetBOOKEDLSTORAGE")
+  //     }
+  //   }, []);
+
   return (
 
     <>
-  <h3>Book again:</h3>
+  <h3>Explore</h3>
 
 <Container fluid  className="d-flex align-items-center justify-content-center" >
 

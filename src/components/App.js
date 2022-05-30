@@ -15,6 +15,7 @@ import Timetable from './Timetable.js';
 import ClassInfo from './ClassInfo.js';
 import yogaPage from './pages/yoga.js';
 import PaintingPage from './pages/painting.js';
+import AdminPage from './pages/adminPage.js';
 
 function App() {
   return (
@@ -28,17 +29,19 @@ function App() {
      </div>
       
         <Router> 
+          
           <AuthProvider>    
-            <Switch>   
+            <Switch>     
+              <Route path="/home" component={Home}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/login" component={Login}/>
               <Route path="/yoga" component={yogaPage}/>
               <Route path="/painting" component={PaintingPage}/>
               <Route path="/funky-dancing" component={Login}/>
-              <PrivateRoute exact path="/" component={Dashboard}/>
-              <Route path="/home" component={Home}/>
+              <PrivateRoute exact path="/" component={Dashboard}/> 
               <Route path="/myTimetable" component={Timetable}/>
               <Route path="/update-profile" component={UpdateProfile}/>
+              <Route path="/admin" component={AdminPage}/>
             </Switch>
           </AuthProvider>
         </Router>  

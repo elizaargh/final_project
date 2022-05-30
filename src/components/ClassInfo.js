@@ -23,14 +23,15 @@ const ClassInfo = () => {
     // }
   
     async function ReadTestDoc() { 
+
         const docRef = doc(db, "Yoga", userUid )
-        
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()){
             const docData = (docSnap.data());
           setWhatever( Object.keys(docData))
           console.log(Object.keys(docData))
-            
+        
+            // __name__
            
         }else{
             console.log("nothing")
