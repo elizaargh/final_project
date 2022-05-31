@@ -11,7 +11,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 // import localStorage from "local-storage";
 
 // Add a new document in collection "Ee"
-const BookIntoClass = () => {
+const ExploreClasses = () => {
   const [show, setShow] = useState(false);
   const [book, setBook] = useState('book')
   const [message, setMessage] = useState('Are you sure you want to book?')
@@ -88,7 +88,6 @@ const BookIntoClass = () => {
   return (
 
     <>
-  <h3>Explore</h3>
 
 <Container fluid  className="d-flex align-items-center justify-content-center" >
 
@@ -172,4 +171,4 @@ const BookIntoClass = () => {
 
 }
 
-export default BookIntoClass;
+export default ExploreClasses;

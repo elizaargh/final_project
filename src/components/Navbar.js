@@ -5,7 +5,12 @@ import { useAuth } from "./contexts/AuthContext"
 import UserIsIn from "./UserIsIn";
 
 export default function CommunityNavbar() {
- 
+   const {currentUser, logout} = useAuth()
+
+   async function handleLogout(){
+      await logout()
+}
+  
     return(
         <>
        
@@ -32,10 +37,18 @@ export default function CommunityNavbar() {
               </NavDropdown>
       </Nav>
     <Nav>
-      <Nav.Link href="/">My Profile</Nav.Link>
-      <Nav.Link eventKey={2} href="/login">
-        Sign In
-      </Nav.Link>
+
+      
+    {currentUser && <Nav.Link href="/">My Profile</Nav.Link>}
+    {currentUser && <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>}
+    {!currentUser && <Nav.Link eventKey={2} href="/login">
+        Log In
+      </Nav.Link> }
+      
+      {!currentUser &&<Nav.Link eventKey={2} href="/signup">
+        Sign Up
+      </Nav.Link>}
+     
     </Nav>
   </Navbar.Collapse>
   </Container>

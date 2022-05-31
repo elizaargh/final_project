@@ -6,6 +6,7 @@ import HomeFeature from "../HomeFeature"
 import ClassInfo from "../ClassInfo"
 import YogaFeature from "../YogaFeature"
 
+
 export default function yogaPage({}
     ){
     

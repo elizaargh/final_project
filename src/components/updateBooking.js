@@ -9,6 +9,7 @@ import { useAuth } from "./contexts/AuthContext";
 const UpdateBooking = () => {
     const {currentUser} = useAuth()
     //make this dynamic!
+    
     const nameClass = "Yoga"
     const dayClass = "monday-class"
 

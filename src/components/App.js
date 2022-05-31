@@ -22,7 +22,12 @@ function App() {
     <> 
 
 <Container fluid >
-    <Router> <CommunityNavbar/> </Router>
+    <Router>     
+      <AuthProvider>    
+            <Switch>   
+               <CommunityNavbar/>  
+            </Switch>
+      </AuthProvider> </Router>
      <div>
        <br/>
        <br/>
@@ -39,9 +44,9 @@ function App() {
               <Route path="/painting" component={PaintingPage}/>
               <Route path="/funky-dancing" component={Login}/>
               <PrivateRoute exact path="/" component={Dashboard}/> 
-              <Route path="/myTimetable" component={Timetable}/>
+              <PrivateRoute exact path="/myTimetable" component={Timetable}/>
               <Route path="/update-profile" component={UpdateProfile}/>
-              <Route path="/admin" component={AdminPage}/>
+              <PrivateRoute exact path="/admin" component={AdminPage}/>
             </Switch>
           </AuthProvider>
         </Router>  

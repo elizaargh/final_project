@@ -5,6 +5,13 @@ import { db } from "../firebase";
 import { useAuth } from "./contexts/AuthContext";
 
 
+// get TEXT from input feilds. 
+// input fields in form are targeted by key to object e.g[0]
+// now, i need the string "text" to be saved so i can use it to GET data
+// i use e.g. let nameClass = "null" because i get an error when i dont.
+// BUT e.g. let nameClass is now (e.target[whatever].value) because of handlesubmit function 
+
+
 
 const AdminCreateNew = () => {
     const {currentUser} = useAuth()
@@ -16,12 +23,14 @@ const AdminCreateNew = () => {
     const [duration, setDuration] = useState('')
     const [location, setLocation] = useState('')
     const [age, setAgeLimit] = useState('')
+    
     //make this dynamic! 
     let nameClass = "null"
     let dayClass = "null"
     let classType = "null"
     let descriptionClass = "null"
     let classStart = "null"
+    let classTutor = "null"
     let classDuration = "null"
     let classLocation = "null"
     let classAge = "null"
@@ -52,8 +61,11 @@ const AdminCreateNew = () => {
         classDuration = (e.target[4].value)
 
         setDay(e.target[5].value)
-        dayClass = (e.target[5].value)
+        dayClass = (e.target[5].value).toString()
         console.log(dayClass)
+
+        classTutor = (e.target[6].value)
+        console.log(classTutor)
        
 
         setLocation(e.target[7].value)
@@ -68,9 +80,11 @@ const AdminCreateNew = () => {
 
     async function adminCreateNew() { 
         await setDoc(doc(db, nameClass, dayClass), {
-          type: classType,
+          active: [true],
+          type: addClass,
           description: descriptionClass,
           start: classStart,
+          tutor: classTutor,
           duration: classDuration,
           location: classLocation,
           ageLimit: classAge
@@ -90,7 +104,7 @@ const AdminCreateNew = () => {
 
     useEffect(() => {
         
-          }, [nameClass, dayClass, classType, descriptionClass, classAge, classDuration, classLocation]);
+          }, [nameClass, dayClass, classType, descriptionClass, classAge, classDuration, classLocation, classTutor]);
     return (
         <> 
 
@@ -147,7 +161,7 @@ const AdminCreateNew = () => {
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridCity">
       <Form.Label>Tutor Name</Form.Label>
-      <Form.Control placeholder="7 am" />
+      <Form.Control/>
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridState">
@@ -163,7 +177,7 @@ const AdminCreateNew = () => {
     </Form.Group>
 
     <Form.Group as={Col} controlId="formGridState">
-      <Form.Label>Age requirements</Form.Label>
+      <Form.Label>Age </Form.Label>
       <Form.Select defaultValue="Choose...">
         <option>Select...</option>
         <option>all ages</option>

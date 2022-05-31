@@ -1,6 +1,6 @@
 import { Carousel } from "react-bootstrap"
 import React from "react";
-import img from './yogaClass.jpg'
+import img from './yogaSizecopy.jpg'
 import Image from 'react-bootstrap/Image'
 
 const yogaFeature = () => {

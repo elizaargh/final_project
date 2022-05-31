@@ -23,7 +23,7 @@ export default function Dashboard() {
     }
     return (
         <>
-        <ClassInfo/>
+        
         <Container fluid className="d-flex align-items-center justify-content-center"> 
         <div className='w-100' style={{maxWidth: "400px"}}>
         <Card>
@@ -31,9 +31,9 @@ export default function Dashboard() {
                 <h2 className="text-senter mb-4">Profile</h2>
                 {error && <Alert variant="danger">{error}</Alert>}
                 <strong>Email:</strong> {currentUser.email}
-               
-                 <p> <strong>Name: {currentUser.uid}</strong> </p>
-                 <p> Show users booked classes coming soon!</p>
+                 {/* <ClassInfo/> */}
+                 {/* <p> <strong>Name: {currentUser.uid}</strong> </p> */}
+                 
                  
                 <strong></strong> 
                 <Link to="/update-profile" className="btn btn-primary w-100 mt-3">

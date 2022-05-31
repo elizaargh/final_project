@@ -17,7 +17,7 @@ const ClassBookingCards = () => {
                     <Card.Text>
                         Start: 7 am
                         <br/>
-                        Bring: Yoga Mat and Water Bottle
+                        Bring: Yoga Mat 
                         <br/>
                         <br/>
                         <UpdateBooking/>
@@ -54,7 +54,7 @@ const ClassBookingCards = () => {
                     <Card.Text>
                         
                             Start: 8 am <br/>
-                            When: Every 2nd Sat of the Month
+                            Where: Sunshine Park
                     
                               <br/>
                         <br/>

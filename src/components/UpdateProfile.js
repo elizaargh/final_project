@@ -11,7 +11,7 @@ import MyBookings from "./MyBookings";
 import CreateClass from "./UserBooking";
 import UserBooking from "./UserBooking";
 import ClassInfo from "./ClassInfo";
-import BookIntoClass from "./ExploreClasses"
+import ExploreClasses from "./ExploreClasses"
 import UpdateBooking from "./updateBooking";
 import CancelBooking from "./CancelBooking";
 import ClassBookingCards from "./ClassBookingCards";
@@ -57,22 +57,26 @@ export default function UpdateProfile(){
     return (    
     <> 
      <Container >
-        
-        <h1 className="firestoreData"> Welcome {currentUser.email}
-        </h1>
-        <Nav.Link href="/myTimetable">My Timetable</Nav.Link>
+     <div className="Newsletter-container">
+     <h1 className="home-page-headings"> Welcome </h1>
+     <p className="home-page-headings">
+        {currentUser.email} </p>
+        <h2 className="home-page-headings">
+         <Nav.Link href="/myTimetable">My Timetable</Nav.Link>
+        </h2>
        
-        <div>  
-            <h3> Your Upcoming Classes:</h3>
+            <h1 className="home-page-headings"> Your Booked Classes</h1>
            <ClassBookingCards/>
-            <BookIntoClass/>
+           <h1 className="home-page-headings"> Explore </h1>
+            <ExploreClasses/>
            
             {/* <Timetable/> */}
             {/* <ClassInfo/> */}
             {/* <UserIsIn/>
             <MyBookings/> */}
             <Button onClick={handleLogout} htmlFor="Log Out button"> Log out</Button>
-        </div>  
+        
+    </div>
     </Container>     
     </>
     )
