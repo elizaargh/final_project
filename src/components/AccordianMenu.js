@@ -30,7 +30,7 @@ const AccordianMenu = () => {
                 <p>We encourage travel via public transport where possible.
                </p>
               <strong>Public Transport:</strong> Bus, Train and LightRail <br/><br/>
-              <strong>Parking: </strong> Accessible parking spots and street parking on Sunshine lane
+              <strong>Parking </strong> Accessible parking spots and street parking on Sunshine lane
             </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="3">
