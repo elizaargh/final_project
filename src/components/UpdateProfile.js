@@ -70,7 +70,7 @@ export default function UpdateProfile(){
            <h1 className="home-page-headings"> Explore </h1>
             <ExploreClasses/>
            
-            {/* <Timetable/> */}
+            
             {/* <ClassInfo/> */}
             {/* <UserIsIn/>
             <MyBookings/> */}
